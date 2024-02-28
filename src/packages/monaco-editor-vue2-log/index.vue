@@ -4,7 +4,7 @@
  * @Author: ji.yaning
  * @Date: 2024-02-06 17:38:50
  * @LastEditors: ji.yaning
- * @LastEditTime: 2024-02-07 10:36:27
+ * @LastEditTime: 2024-02-28 15:28:58
 -->
 <template>
   <div class="view-log-wrap" id="view-log">
@@ -244,7 +244,7 @@ export default {
     // 获取编辑器内容
     getValue () {
       this.currentValue = this.monacoInstance.getValue()
-      this.$emit("valueChange", this.currentValue)
+      this.$emit("editorValue", this.currentValue)
     },
     // 全屏
     fullScreen () {
@@ -287,7 +287,7 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang='scss'>
 .view-log-wrap {
   color: #fff;
   .view-log-head {
@@ -310,19 +310,19 @@ export default {
       position: absolute;
       background-color: #000;
       right: 60px;
-      z-index: 1;
+      z-index: 6;
       display: flex;
       flex-direction: column;
       padding: 10px;
       padding-bottom: 0;
       border-radius: 2px;
-      ::v-deep .el-switch {
+      .el-switch {
         margin-bottom: 10px;
         .el-switch__label {
           color: #fff;
         }
       }
-      ::v-deep .el-switch.is-checked .el-switch__core {
+      .el-switch.is-checked .el-switch__core {
         background: linear-gradient(59deg, #363840, #525e93) !important;
         border-color: #92979d !important;
       }

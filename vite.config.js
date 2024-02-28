@@ -4,7 +4,7 @@
  * @Author: ji.yaning
  * @Date: 2024-02-06 17:37:50
  * @LastEditors: ji.yaning
- * @LastEditTime: 2024-02-07 16:25:05
+ * @LastEditTime: 2024-02-27 17:10:53
  */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue2'
@@ -26,9 +26,9 @@ export default defineConfig({
   build: {
     lib: {
       // 入口
-      entry: path.resolve(__dirname, 'src/packages/monaco-editor-vue2-log/index.js'),
-      name: 'MonacoEditorVue2Log',
-      fileName: 'MonacoEditorVue2Log'
+      entry: path.resolve(__dirname, 'src/packages/index.js'),
+      name: 'monaco-editor-vue2-log',
+      fileName: 'monaco-editor-vue2-log'
     },
     rollupOptions: {
       // 不需要打包进库的依赖，忽略vue

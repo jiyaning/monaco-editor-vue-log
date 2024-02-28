@@ -4,15 +4,17 @@
  * @Author: ji.yaning
  * @Date: 2024-02-06 17:37:50
  * @LastEditors: ji.yaning
- * @LastEditTime: 2024-02-07 13:47:43
+ * @LastEditTime: 2024-02-28 16:09:19
 -->
 <template>
-  <div class="">
-    <monaco-editor-vue2-log
+  <div>
+    <MonacoEditorVue2Log
       :title="title"
       :value="value"
       :readOnly="readOnly"
-    ></monaco-editor-vue2-log>
+      @editorValue="getEdtiorValue"
+      ref="editor"
+    ></MonacoEditorVue2Log>
   </div>
 </template>
 <script>
@@ -25,14 +27,34 @@ export default {
   data () {
     return {
       title: '日志log',
-      value: '123',
+      value: `"name": "monaco-editor-vue2-log",
+"version": "1.0.2",
+"description": "基于monaco-editor的vue2日志log组件",
+"main": "monaco-editor-vue2-log.js",
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+"keywords": [
+  "vue",
+  "vue2",
+  "log",
+  "monaco-editor",
+  "monaco",
+  "editor"
+],
+"author": "ji.yaning",
+"license": "ISC"`,
       readOnly: false,
     }
   },
+  mounted () {
+    this.$refs['editor'].getValue()
+  },
   methods: {
-
+    getEdtiorValue (value) {
+      console.log('编辑器的值为', value)
+    }
   },
 }
 </script>
-<style scoped>
-</style>
+

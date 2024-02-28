@@ -1,0 +1,23 @@
+{
+  "name": "monaco-editor-vue2-log",
+  "version": "1.0.2",
+  "description": "基于monaco-editor的vue2日志log组件",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jiyaning/monaco-editor-vue-log.git"
+  },
+  "main": "monaco-editor-vue2-log.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "vue2",
+    "log",
+    "monaco-editor",
+    "monaco",
+    "editor"
+  ],
+  "author": "ji.yaning",
+  "license": "ISC"
+}
