@@ -9,8 +9,8 @@ dependencies:
     specifier: ^2.15.14
     version: 2.15.14(vue@2.7.16)
   monaco-editor:
-    specifier: ^0.45.0
-    version: 0.45.0
+    specifier: 0.34.0
+    version: 0.34.0
   vue:
     specifier: ^2.7.16
     version: 2.7.16
@@ -588,8 +588,8 @@ packages:
     resolution: {integrity: sha1-Z5WRxWTDv/quhFTPCz3zcMPWkRw=}
     dev: true
 
-  /monaco-editor@0.45.0:
-    resolution: {integrity: sha512-mjv1G1ZzfEE3k9HZN0dQ2olMdwIfaeAAjFiwNprLfYNRSz7ctv9XuCT7gPtBGrMUeV1/iZzYKj17Khu1hxoHOA==}
+  /monaco-editor@0.34.0:
+    resolution: {integrity: sha512-VF+S5zG8wxfinLKLrWcl4WUizMx+LeJrG4PM/M78OhcwocpV0jiyhX/pG6Q9jIOhrb/ckYi6nHnaR5OojlOZCQ==}
     dev: false
 
   /nanoid@3.3.7:

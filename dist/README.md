@@ -48,7 +48,7 @@ Vue.use(MonacoEditorVue2Log)
 
 ```js
 <template>
-  <div>
+  <div class="container">
     <MonacoEditorVue2Log
       :title="title"
       :value="value"
@@ -65,7 +65,7 @@ export default {
     return {
       title: '日志log',
       value: `"name": "monaco-editor-vue2-log",
-"version": "1.0.2",
+"version": "1.0.3",
 "description": "基于monaco-editor的vue2日志log组件",
 "main": "monaco-editor-vue2-log.js",
 "scripts": {
@@ -94,6 +94,11 @@ export default {
   },
 }
 </script>
+<style>
+.container{
+  height: 400px;
+}
+</style>
 ```
 
 示例效果：

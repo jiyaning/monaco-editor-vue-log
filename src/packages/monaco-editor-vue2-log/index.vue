@@ -4,7 +4,7 @@
  * @Author: ji.yaning
  * @Date: 2024-02-06 17:38:50
  * @LastEditors: ji.yaning
- * @LastEditTime: 2024-02-28 15:28:58
+ * @LastEditTime: 2024-02-28 16:58:46
 -->
 <template>
   <div class="view-log-wrap" id="view-log">
@@ -290,6 +290,7 @@ export default {
 <style lang='scss'>
 .view-log-wrap {
   color: #fff;
+  height: 100%;
   .view-log-head {
     height: 36px;
     line-height: 36px;
@@ -335,8 +336,7 @@ export default {
     border-radius: 0px 0px 4px 4px;
   }
   .screen-height {
-    // height: 450px;
-    height: 220px;
+    height: calc(100% - 36px);
     width: calc(100% - 0px);
   }
   .full-screen-height {
