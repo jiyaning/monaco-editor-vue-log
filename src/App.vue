@@ -4,7 +4,7 @@
  * @Author: ji.yaning
  * @Date: 2024-02-06 17:37:50
  * @LastEditors: ji.yaning
- * @LastEditTime: 2024-03-01 16:06:49
+ * @LastEditTime: 2024-03-01 17:36:40
 -->
 <template>
   <div class="container">
@@ -13,6 +13,7 @@
       :value="value"
       :readOnly="readOnly"
       :keywordsStyle="keywordsStyle"
+      :scrollToBottomVisible="scrollToBottomVisible"
       @editorValue="getEdtiorValue"
       ref="editor"
     ></MonacoEditorVue2Log>
@@ -29,7 +30,7 @@ export default {
     return {
       title: '日志log',
       value: `"name": "monaco-editor-vue2-log",
-"version": "1.0.4",
+"version": "1.0.5",
 "description": "基于monaco-editor的vue2日志log组件",
 "main": "monaco-editor-vue2-log.js",
 "scripts": {
@@ -46,11 +47,12 @@ export default {
 "author": "ji.yaning",
 "license": "ISC"`,
       readOnly: false,
-      keywordsStyle:[
+      keywordsStyle: [
         { token: 'monaco', foreground: '#E5E510' },
         { token: 'editor', foreground: '#00EE76' },
         { token: 'vue', foreground: '#508ae1', fontStyle: 'bold' }
-      ]
+      ],
+      scrollToBottomVisible: true,
     }
   },
   mounted () {
@@ -64,7 +66,7 @@ export default {
 }
 </script>
 <style>
-.container{
+.container {
   height: 400px;
 }
 </style>

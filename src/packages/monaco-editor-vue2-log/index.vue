@@ -4,7 +4,7 @@
  * @Author: ji.yaning
  * @Date: 2024-02-06 17:38:50
  * @LastEditors: ji.yaning
- * @LastEditTime: 2024-03-01 14:53:42
+ * @LastEditTime: 2024-03-01 17:32:08
 -->
 <template>
   <div class="view-log-wrap" id="view-log">
@@ -146,12 +146,16 @@ export default {
       type: Array,
       default: []
     },
+    scrollToBottomVisible: {
+      type: Boolean,
+      default: false
+    },
   },
   created () {
     this.currentValue = this.value
   },
   mounted () {
-    legend.tokenTypes = this.keywordsStyle.map(item=>{
+    legend.tokenTypes = this.keywordsStyle.map(item => {
       return item.token
     })
     monaco.editor.defineTheme('myCustomTheme', {
@@ -174,6 +178,9 @@ export default {
     // console.log(this.monacoInstance.getActions())
     this.model = this.monacoInstance.getModel()
     // console.log(this.model)
+    if (this.scrollToBottomVisible) {
+      this.scrollToBottom()
+    }
   },
   destroyed () {
     this.monacoInstance.dispose();//使用完成销毁实例
@@ -244,8 +251,9 @@ export default {
     },
     // value
     value (news) {
+      // console.log("value ~ news:", news)
       this.monacoInstance.setValue(news)
-      setTimeout(this.scrollToBottom, 0)
+      // setTimeout(this.scrollToBottom, 0)
     }
   },
   methods: {
