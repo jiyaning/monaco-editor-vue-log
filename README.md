@@ -39,3 +39,13 @@ npm config set registry https://registry.npmjs.org/
 2. cd 进入dist目录，执行 `npm login`，根据提示按回车进入浏览器登录账号
 
 3. 登录成功后回到终端，执行`npm publish`
+
+## 效果展示
+
+支持关键字搜索：
+
+![示例](https://jiyaning.github.io/staticImgs/images/monaco-editor-vue2-log.png)
+
+支持是否显示行号、换行、缩略图，支持全屏显示：
+
+![示例](https://jiyaning.github.io/staticImgs/images/monaco-editor-vue2-log1.png)

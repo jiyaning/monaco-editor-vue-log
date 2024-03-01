@@ -103,5 +103,11 @@ export default {
 
 示例效果：
 
+支持关键字搜索：
+
 ![示例](https://jiyaning.github.io/staticImgs/images/monaco-editor-vue2-log.png)
+
+支持是否显示行号、换行、缩略图，支持全屏显示：
+
+![示例](https://jiyaning.github.io/staticImgs/images/monaco-editor-vue2-log1.png)
 
