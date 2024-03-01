@@ -4,7 +4,7 @@
  * @Author: ji.yaning
  * @Date: 2024-02-06 17:38:50
  * @LastEditors: ji.yaning
- * @LastEditTime: 2024-02-28 16:58:46
+ * @LastEditTime: 2024-03-01 14:53:42
 -->
 <template>
   <div class="view-log-wrap" id="view-log">
@@ -127,18 +127,6 @@ monaco.languages.registerDocumentSemanticTokensProvider('plaintext', {
   releaseDocumentSemanticTokens: function (resultId) { }
 });
 
-monaco.editor.defineTheme('myCustomTheme', {
-  base: 'vs-dark',
-  inherit: true,
-  colors: {},
-  rules: [
-    { token: 'WARN', foreground: '#E5E510', fontStyle: 'bold' },
-    { token: 'WARNING', foreground: '#EEEE00' },
-    { token: 'INFO', foreground: '#3CB371', fontStyle: 'bold' },
-    // { token: 'success', foreground: '#00EE76' }
-  ]
-});
-
 export default {
   name: 'MonacoEditorVue2Log',
   props: {
@@ -153,12 +141,32 @@ export default {
     readOnly: {
       type: Boolean,
       default: false
-    }
+    },
+    keywordsStyle: {
+      type: Array,
+      default: []
+    },
   },
   created () {
     this.currentValue = this.value
   },
   mounted () {
+    legend.tokenTypes = this.keywordsStyle.map(item=>{
+      return item.token
+    })
+    monaco.editor.defineTheme('myCustomTheme', {
+      base: 'vs-dark',
+      inherit: true,
+      colors: {},
+      rules: [
+        // { token: 'WARN', foreground: '#E5E510', fontStyle: 'bold' },
+        // { token: 'WARNING', foreground: '#EEEE00' },
+        // { token: 'INFO', foreground: '#3CB371', fontStyle: 'bold' },
+        // { token: 'success', foreground: '#00EE76' }
+        ...this.keywordsStyle
+      ]
+    });
+
     // 编辑器实例化
     this.monacoInstance = monaco.editor.create(this.$refs.monaco, {
       ...this.options

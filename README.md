@@ -42,7 +42,7 @@ npm config set registry https://registry.npmjs.org/
 
 ## 效果展示
 
-支持关键字搜索：
+支持关键字搜索、关键字自定义样式颜色：
 
 ![示例](https://jiyaning.github.io/staticImgs/images/monaco-editor-vue2-log.png)
 

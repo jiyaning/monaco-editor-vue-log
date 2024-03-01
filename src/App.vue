@@ -4,7 +4,7 @@
  * @Author: ji.yaning
  * @Date: 2024-02-06 17:37:50
  * @LastEditors: ji.yaning
- * @LastEditTime: 2024-02-28 17:00:42
+ * @LastEditTime: 2024-03-01 16:06:49
 -->
 <template>
   <div class="container">
@@ -12,6 +12,7 @@
       :title="title"
       :value="value"
       :readOnly="readOnly"
+      :keywordsStyle="keywordsStyle"
       @editorValue="getEdtiorValue"
       ref="editor"
     ></MonacoEditorVue2Log>
@@ -45,6 +46,11 @@ export default {
 "author": "ji.yaning",
 "license": "ISC"`,
       readOnly: false,
+      keywordsStyle:[
+        { token: 'monaco', foreground: '#E5E510' },
+        { token: 'editor', foreground: '#00EE76' },
+        { token: 'vue', foreground: '#508ae1', fontStyle: 'bold' }
+      ]
     }
   },
   mounted () {

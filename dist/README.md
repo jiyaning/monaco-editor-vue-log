@@ -13,25 +13,31 @@ npm install monaco-editor-vue2-log
       :title="title"
       :value="value"
       :readOnly="readOnly"
+      :keywordsStyle="keywordsStyle"
       @editorValue="getEdtiorValue"
       ref="editor"
   ></MonacoEditorVue2Log>
 ```
 
-传参：
+属性：
 
-| 参数     | 描述                     | 备注        |
-| -------- | ------------------------ | ----------- |
-| title    | 标题                     | 默认为空    |
-| value    | 日志的内容               | 默认为空    |
-| readOnly | 日志是否只读（不可编辑） | 默认为false |
+| 属性          | 描述                                   | 默认值              |
+| ------------- | -------------------------------------- | ------------------- |
+| title         | 标题                                   | 默认为空            |
+| value         | 日志的内容                             | 默认为空            |
+| readOnly      | 日志是否只读（不可编辑），为true时只读 | 默认为false，可编辑 |
+| keywordsStyle | 关键字自定义样式、颜色                 | 默认为空数组[]      |
+
+事件：
+
+| 事件        | 描述           |
+| ----------- | -------------- |
+| editorValue | 获取编辑器的值 |
 
 获取编辑器的值：
 
 ```js
-mounted () {
-  	this.$refs['editor'].getValue()
-},
+this.$refs['editor'].getValue()
 ```
 
 示例代码：
@@ -53,6 +59,7 @@ Vue.use(MonacoEditorVue2Log)
       :title="title"
       :value="value"
       :readOnly="readOnly"
+	    :keywordsStyle="keywordsStyle"
       @editorValue="getEdtiorValue"
       ref="editor"
     ></MonacoEditorVue2Log>
@@ -82,6 +89,11 @@ export default {
 "author": "ji.yaning",
 "license": "ISC"`,
       readOnly: false,
+      keywordsStyle:[
+        { token: 'monaco', foreground: '#E5E510' },
+        { token: 'editor', foreground: '#00EE76' },
+        { token: 'vue', foreground: '#508ae1', fontStyle: 'bold' }
+      ]
     }
   },
   mounted () {
@@ -103,7 +115,7 @@ export default {
 
 示例效果：
 
-支持关键字搜索：
+支持关键字搜索、关键字自定义样式颜色：
 
 ![示例](https://jiyaning.github.io/staticImgs/images/monaco-editor-vue2-log.png)
 
