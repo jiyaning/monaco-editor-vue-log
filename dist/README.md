@@ -72,7 +72,7 @@ export default {
     return {
       title: '日志log',
       value: `"name": "monaco-editor-vue2-log",
-"version": "1.0.3",
+"version": "1.0.4",
 "description": "基于monaco-editor的vue2日志log组件",
 "main": "monaco-editor-vue2-log.js",
 "scripts": {
